@@ -30,15 +30,31 @@
 
 <h2>基础移植范本</h2>
 
-项目目的 为移植到其它 ARM 芯片提供一个基础范本。以最小的修改，让 t-monitor 和 t-kernel 在 ARM9
+项目目的 为移植到其它 ARM 芯片提供一个基础范本。以最小的修改，让 t-monitor 和 t-kernel 在 arm9
 上运行。
 
-获取 Open T-Kernel 代码库，并切换到 build-arm9 分支。
+获取 Open T-Kernel 代码库，并切换到 arm9 分支。
 
 <pre><code>
-git clone https://git.launchpad.net/t-kernel 
-git checkout build-arm9	
+$ git clone https://git.launchpad.net/t-kernel 
+$ git checkout arm9	
 </code></pre>
+
+<h3>修改代码</h3>
+如果你的 Linux 机器下复制代码，又在 Windows 下修改代码，以下设置可以作为参考，避免文件权限问题。
+<pre><code>
+$ git config core.fileMode false
+</code></pre>
+
+<h3>提交补丁</h3>
+<pre><code>
+$ git format-patch -N1
+</code></pre>
+
+<h3>发送劳动成果</h3>
+在修改好之后，建议验证功能，检查代码风格，修装齐整后，生成补丁。撰写修改的目的、达成目的方法、引用的文档等。并附上补丁，或者紧跟的邮件发送补丁。
+邮件格式请用“纯文本”格式。
+
 
 
 <h2>代码</h2>
