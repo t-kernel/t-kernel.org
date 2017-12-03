@@ -10,34 +10,22 @@
  </head>
  <body>
 
- <table align="center" width="800px" border="1" cellpadding="0" cellspacing="0">
- <tr>
- 	<td>我</td>
- 	<td>就</td>
- </tr>
- <tr>
- 	<td>试试</td>
- 	<td>表格</td>
- </tr>
-
-
- </table>
-
 
 
 <table align="center" width="800px" border="1" cellpadding="0" cellspacing="0">
 <tr><td>
 
-<h3>基础移植范本</h3>
 
-项目目的 为移植到其它 ARM 芯片提供一个基础范本。以最小的修改，让 t-monitor 和 t-kernel 在 arm9
-上运行。
+
+<h3>基础版本</h3>
+
+这个版本的目的是，维护一个为移植到其它 ARM 芯片提供一个基础范本。以最小的修改，让 t-monitor 和 t-kernel 在 arm9 上运行。
 
 获取 Open T-Kernel 代码库，并切换到 arm9 分支。
 
 <pre><code>
-$ git clone https://git.launchpad.net/t-kernel 
-$ git checkout arm9	
+$ git clone git://git.open.tkernel.org/t-kernel
+$ git checkout arm9 
 </code></pre>
 
 <h3>修改代码</h3>
@@ -46,15 +34,69 @@ $ git checkout arm9
 $ git config core.fileMode false
 </code></pre>
 
-<h3>提交补丁</h3>
+<h3>讨论交流</h3>
+<a href="https://lists.launchpad.net/t-kernel-zh/maillist.html">电子邮件列表</a>
+
+<h3>制作补丁</h3>
 <pre><code>
 $ git format-patch -N1
 </code></pre>
 
 <h3>发送劳动成果</h3>
-在修改好之后，建议验证功能，检查代码风格，修装齐整后，生成补丁。撰写修改的目的、达成目的方法、引用的文档等。并附上补丁，或者紧跟的邮件发送补丁。
-邮件格式请用“纯文本”格式。
+在修改好之后，建议验证功能，检查代码风格，修装齐整后，生成补丁。撰写修改的目的、达成目的方法、引用的文档等。并附上补丁，或者紧跟的邮件发送补丁，邮件格式请用“纯文本”格式。
 
+<a href="mailto:t-kernel-zh@lists.launchpad.net">邮件列表</a>
+<pre><tt>t-kernel-zh@lists.launchpad.net</tt></pre>
+
+</td></tr>
+
+<tr height="100">
+  <td></td>
+</tr>
+
+
+<tr><td>
+<h3>准备开发环境</h3>
+
+<tt>https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update</tt>
+
+<a href="https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2">
+	Linux
+</a>
+
+&nbsp;
+
+<a href="https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-win32.zip">
+	Windows
+</a>
+
+
+Windows 环境下可以使用 emIDE 集成开发环境，在工程小的时候很方便。
+
+<a href="http://emide.org/downloads/emIDE%20V2.20%20Setup.exe">Windows(emIDE)</a>
+
+
+<h3>准备开发环境主机</h3>
+<ul>
+  <li>安装ubuntu系统</li>
+  <li>安装编译器</li>
+  <li>安装emIDE集成环境(Windows)</li>
+  <li>安装git</li>
+</ul>
+
+<h3>从源码编译</h3>
+<ul>
+  <li>格式的“可执行文件”。</li>
+  <li>BIN格式文件</li>
+</ul>
+
+<h3>如何运行程序</h3>
+使用 u-boot 通过网线从 tftp 服务器下载 BIN 格式文件到内存中运行。
+<ul>
+  <li>准备tftp服务器。</li>
+  <li>下载bin文件。</li>
+  <li>运行程序。</li>
+</ul>
 
 
 <h3>代码</h3>
